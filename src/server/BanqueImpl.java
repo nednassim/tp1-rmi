@@ -19,7 +19,7 @@ public class BanqueImpl extends UnicastRemoteObject implements BanqueInterface {
 
     @Override
     public Compte creerCompteCourant(int numero, String client, double soldeInitial, Date date_creation, double taux) throws RemoteException {
-        Compte compte = new CompteCourant(numero, client, soldeInitial, Date date_creation, 0);
+        Compte compte = new CompteCourant(numero, client, soldeInitial,  date_creation, 0);
         comptes.put(numero, compte);
         System.out.println("[Serveur] Compte courant créé pour " + client + " (n°" + numero + ")");
         return compte;
@@ -27,7 +27,7 @@ public class BanqueImpl extends UnicastRemoteObject implements BanqueInterface {
 
     @Override
     public Compte creerCompteEpargne(int numero, String client, double soldeInitial, Date date_creation, double decouvert) throws RemoteException {
-        Compte compte = new CompteEpargne(numero, client, soldeInitial, date_creation);
+        Compte compte = new CompteEpargne(numero, client, soldeInitial, date_creation, 0);
         comptes.put(numero, compte);
         System.out.println("[Serveur] Compte épargne créé pour " + client + " (n°" + numero + ")");
         return compte;
