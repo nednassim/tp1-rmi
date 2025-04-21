@@ -5,6 +5,7 @@ import shared.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Scanner;
+import java.util.*;
 
 public class ClientBanque {
     public static void main(String[] args) {
@@ -80,9 +81,9 @@ public class ClientBanque {
         double solde = scanner.nextDouble();
         
         if (type.equals("courant")) {
-            banque.creerCompteCourant(numero, client, solde);
+            banque.creerCompteCourant(numero, client, solde, new Date(), 0);
         } else {
-            banque.creerCompteEpargne(numero, client, solde);
+            banque.creerCompteEpargne(numero, client, solde, new Date(), 0);
         }
         
         System.out.println("Compte " + type + " créé avec succès!");

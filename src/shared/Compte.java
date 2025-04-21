@@ -1,25 +1,28 @@
 package shared;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 
 public abstract class Compte implements Serializable {
     private int numero;
     private String client;
     private double solde;
+    private Date date_creation;
     private List<Operation> operations;
 
-    public Compte(int numero, String client, double soldeInitial) {
+    public Compte(int numero, String client, double soldeInitial, Date date_creation) {
         this.numero = numero;
         this.client = client;
         this.solde = soldeInitial;
+        this.date_creation = date_creation;        
         this.operations = new ArrayList<>();
     }
 
     public int getNumero() { return numero; }
     public String getClient() { return client; }
     public double getSolde() { return solde; }
+    public Date getDateCreation() { return date_creation; }
 
     public void setNumero(int numero) {
        this.numero = numero;
@@ -29,6 +32,9 @@ public abstract class Compte implements Serializable {
     }
     public void setSolde(double solde) {
        this.solde = solde;
+    }
+    public void setDateCreation(Date date_creation) {
+       this.date_creation = date_creation;
     }
     public List<Operation> getOperations() { return operations; }
 
