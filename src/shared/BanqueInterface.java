@@ -12,5 +12,4 @@ public interface BanqueInterface extends Remote {
     void effectuerVersement(int numeroCompte, double montant) throws RemoteException;
     void effectuerRetrait(int numeroCompte, double montant) throws RemoteException;
     List<Operation> obtenirOperations(int numeroCompte) throws RemoteException;
-    void creerCompteCourant(int numero, String client, double solde, Date date, int i);
 }
